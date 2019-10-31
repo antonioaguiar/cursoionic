@@ -25744,3 +25744,13 @@ page-intro .tutorial-page p {
 page-intro .tutorial-page p b {
   color: #000000;
 }
+
+page-movies h2.feed_title {
+  font-weight: bold;
+  color: darkblue;
+}
+
+page-movies p.feed_date {
+  font-size: 12px;
+  color: darkgrey;
+}
