@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalhes do filme</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-card *ngIf="movie">
+        <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path">
+        <ion-card-content>
+          <ion-card-title>
+              <h2 class="feed_title">{{movie.original_title}}</h2>
+          </ion-card-title>
+          <h1>{{movie.title}}</h1>
+          <h2>{{movie.tagline}}</h2>
+          <h4 class="feed_date">{{movie.release_date}}</h4>  
+          <hr>
+          <p>{{movie.overview}}</p>
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-list-header>
+                      Gênero
+                    </ion-list-header>
+                    <ion-item *ngFor="let genres of movie.genres">
+                          {{genres.name}}
+                    </ion-item>
+                  </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-list>
+                      <ion-list-header>
+                          Produtoras
+                        </ion-list-header>
+                      <ion-item *ngFor="let company of movie.production_companies">
+                        <ion-thumbnail  item-start>
+                          <img [src]="'https://image.tmdb.org/t/p/w500/'+company.logo_path">
+                        </ion-thumbnail >
+                        <h2>{{company.name}}</h2>
+                        <p>Pais: {{company.origin_country}}</p>
+                      </ion-item>
+                    </ion-list>
+               </ion-col>
+          </ion-row>
+      </ion-card>
+<!--
+    <ion-card *ngIf="movie">
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path">
+          </ion-avatar>
+          <h2 class="feed_title">{{movie.original_title}}</h2>
+          <h3>{{movie.title}}</h3>
+          <h3>{{movie.tagline}}</h3>
+          <p class="feed_date">{{movie.release_date}}</p>
+        </ion-item>
+    
+        <img [src]="'https://image.tmdb.org/t/p/w500/'+movie.backdrop_path">
+    
+        <ion-card-content>
+          <p>{{movie.overview}}</p>
+        </ion-card-content>
+
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="thumbs-up"></ion-icon>
+              <div>{{movie.popularity}}</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="star-outline"></ion-icon>
+              <div>{{movie.vote_count}}</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small>
+              <ion-icon name="star-half"></ion-icon>
+              <div>{{movie.vote_average}}</div>
+            </button>
+          </ion-col>
+          <ion-col align-self-center text-center>
+            <ion-note>
+              {{movie.TimeAgo}}
+            </ion-note>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+              <ion-list>
+                  <ion-list-header>
+                    Gênero
+                  </ion-list-header>
+                  <ion-item *ngFor="let genres of movie.genres">
+                        {{genres.name}}
+                  </ion-item>
+                </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-list>
+                    <ion-list-header>
+                        Produtoras
+                      </ion-list-header>
+                    <ion-item *ngFor="let company of movie.production_companies">
+                      <ion-thumbnail  item-start>
+                        <img [src]="'https://image.tmdb.org/t/p/w500/'+company.logo_path">
+                      </ion-thumbnail >
+                      <h2>{{company.name}}</h2>
+                      <p>Pais: {{company.origin_country}}</p>
+                    </ion-item>
+                  </ion-list>
+             </ion-col>
+        </ion-row>
+
+        
+      </ion-card>
+-->
+</ion-content>

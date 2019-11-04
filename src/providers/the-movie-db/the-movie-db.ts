@@ -19,17 +19,25 @@ export class TheMovieDbProvider {
   }
 
   private theMovieDB = "https://api.themoviedb.org/3";
-  private parametros = "?language=pt-BR&api_key="+this.getApiKey();
-  getLatestMovies() {
-    return this.http.get(this.theMovieDB + "/movie/latest" + this.parametros);
+  private parametros = "&language=pt-BR&api_key="+this.getApiKey();
+
+  getLatestMovies(page = 1) {
+    return this.http.get(this.theMovieDB + `/movie/latest?page=${page}`+ this.parametros);
   }
 
-  getPopularMovies(){
-    return this.http.get(this.theMovieDB + "/movie/popular" + this.parametros);
+  getPopularMovies(page = 1) {
+    console.log("chamando página..:" + page);
+
+    return this.http.get(this.theMovieDB + `/movie/popular?page=${page}`+ this.parametros);
   }
 
   getApiKey(): string{
-    return "";
+    return "xxxx";
+  }
+
+  getMovieDetails(movie_id){
+    //https://api.themoviedb.org/3/movie/{movie_id}?api_key={key}&language=pt-BR
+    return this.http.get(this.theMovieDB + `/movie/${movie_id}` + "?language=pt-BR&api_key="+this.getApiKey());
   }
 
 }
