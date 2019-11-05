@@ -19,11 +19,20 @@ export class MovieDetailPage {
   
   public movie;
   public movie_id;
+  public swipe = 0;
+  public tap = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     private movieProvider: TheMovieDbProvider,) {
   }
  
+  swipeEvent(e) {
+    this.swipe++;
+    console.log(this.swipe);
+  }
+  tapEvent(e) {
+    this.tap++
+  }
 
   ionViewDidEnter() {
     console.log('ionViewDidEnter MovieDetailPage');
