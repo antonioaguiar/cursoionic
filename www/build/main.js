@@ -1036,7 +1036,7 @@ var TheMovieDbProvider = /** @class */ (function () {
         return this.http.get(this.theMovieDB + ("/movie/popular?page=" + page) + this.parametros);
     };
     TheMovieDbProvider.prototype.getApiKey = function () {
-        return "3eb49f204489b8460b502be455969347";
+        return "cccc";
     };
     TheMovieDbProvider.prototype.getMovieDetails = function (movie_id) {
         //https://api.themoviedb.org/3/movie/{movie_id}?api_key={key}&language=pt-BR
@@ -1044,9 +1044,10 @@ var TheMovieDbProvider = /** @class */ (function () {
     };
     TheMovieDbProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], TheMovieDbProvider);
     return TheMovieDbProvider;
+    var _a;
 }());
 
 //# sourceMappingURL=the-movie-db.js.map

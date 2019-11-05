@@ -32,7 +32,7 @@ export class TheMovieDbProvider {
   }
 
   getApiKey(): string{
-    return "3eb49f204489b8460b502be455969347";
+    return "cccc";
   }
 
   getMovieDetails(movie_id){
